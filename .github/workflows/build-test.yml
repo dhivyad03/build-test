@@ -26,6 +26,10 @@ jobs:
         run: echo "Build completed successfully"
       - name: Display project name
         run: echo "Project name is $PROJECT_NAME"
+      - name: Use GitHub Secret
+        run: echo "Secret is configured"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
 
   test:
     needs: build
