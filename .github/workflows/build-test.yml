@@ -31,8 +31,6 @@ jobs:
         with:
           name: python-build-output
           path: build-output.txt
-      - name: Intentional failure
-        run: exit 1
       - name: Display project name
         run: echo "Project name is $PROJECT_NAME"
       - name: Use GitHub Secret
