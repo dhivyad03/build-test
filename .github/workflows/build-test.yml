@@ -24,6 +24,13 @@ jobs:
 
       - name: Build application
         run: echo "Build completed successfully"
+      - name: Create build output
+        run: echo "My first GitHub Actions artifact" > build-output.txt
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: python-build-output
+          path: build-output.txt
       - name: Display project name
         run: echo "Project name is $PROJECT_NAME"
       - name: Use GitHub Secret
