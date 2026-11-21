@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PROJECT_NAME: python-ci
 
     steps:
       - name: Checkout repository
@@ -22,6 +24,8 @@ jobs:
 
       - name: Build application
         run: echo "Build completed successfully"
+      - name: Display project name
+        run: echo "Project name is $PROJECT_NAME"
 
   test:
     needs: build
